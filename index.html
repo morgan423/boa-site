@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bleu Océan Aquitaine — bientôt en ligne</title>
+  <meta name="description" content="Le vestiaire marin fabriqué en France. Inscrivez-vous pour l'avant-première et une offre de bienvenue à l'ouverture.">
+
+  <!-- Open Graph / partage & QR -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Bleu Océan Aquitaine">
+  <meta property="og:title" content="Bleu Océan Aquitaine — bientôt en ligne">
+  <meta property="og:description" content="Le vestiaire marin fabriqué en France. Inscrivez-vous pour l'avant-première et une offre de bienvenue à l'ouverture.">
+  <meta property="og:url" content="https://bleuoceanaquitaine.fr/">
+  <meta property="og:image" content="https://bleuoceanaquitaine.fr/assets/logo-boa.png">
+  <meta property="og:image:alt" content="Logo Bleu Océan Aquitaine — rose des vents">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bleu Océan Aquitaine — bientôt en ligne">
+  <meta name="twitter:description" content="Le vestiaire marin fabriqué en France. Inscrivez-vous pour l'avant-première et une offre de bienvenue à l'ouverture.">
+  <meta name="twitter:image" content="https://bleuoceanaquitaine.fr/assets/logo-boa.png">
+
+  <!-- Favicon (à partir du logo) -->
+  <link rel="icon" type="image/png" href="assets/logo-boa.png">
+  <link rel="apple-touch-icon" href="assets/logo-boa.png">
+
+  <meta name="theme-color" content="#1C2B4F">
+  <link rel="canonical" href="https://bleuoceanaquitaine.fr/">
+
+  <link rel="preload" as="image" href="assets/logo-boa.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" aria-label="Bleu Océan Aquitaine — bientôt en ligne">
+    <!-- rose des vents en filigrane, rotation lente -->
+    <div class="hero__compass" data-compass aria-hidden="true">
+      <img src="assets/logo-boa.png" alt="">
+    </div>
+    <div class="hero__vignette" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+      <div class="hero__brand">Bleu Océan Aquitaine</div>
+      <p class="hero__kicker">Nomad Explorers</p>
+      <h1 class="hero__title">
+        <span>La</span> <span>boutique</span> <span>lève</span> <span>l'ancre</span> <span>bientôt.</span>
+      </h1>
+      <p class="hero__subtitle">Le vestiaire marin de Bleu Océan Aquitaine — fabriqué en France — s'apprête à prendre le large en ligne. Laissez-nous votre adresse : vous serez les premiers à bord.</p>
+    </div>
+
+    <a class="hero__scroll" href="#inscription" aria-label="Aller à l'inscription">
+      <span>Découvrir</span>
+      <svg width="22" height="13" viewBox="0 0 22 13" fill="none" aria-hidden="true"><path d="M1 1L11 11L21 1" stroke="#8BA8C4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </a>
+  </section>
+
+  <!-- ===================== CAPTURE E-MAIL ===================== -->
+  <section id="inscription" class="section section--paper">
+    <div class="section__inner">
+      <p class="kicker" data-reveal>Avant-première</p>
+      <h2 class="heading" data-reveal data-delay="1">Montez à bord<br>avant tout le monde</h2>
+      <p class="lede" data-reveal data-delay="2">Inscrivez-vous : vous entrez dans le tirage au sort du mois, et vous recevrez une offre de bienvenue le jour de l'ouverture.</p>
+
+      <div class="signup" data-reveal data-delay="3">
+
+        <!-- Formulaire sur-mesure aux couleurs BOA — POST natif vers Brevo.
+             La cible est l'iframe cachée #brevo-sink : pas de CORS, double opt-in
+             et RGPD restent gérés par Brevo. Champs réels : EMAIL, NOM. -->
+        <div id="form-wrap">
+          <form id="signup-form" class="form"
+                method="POST"
+                action="https://7a48fc85.sibforms.com/v2/serve/MUIFAPKRAjIFcCsxDQTWoR3c6gM0JvXIkdXQOeiHetBb15kY2RN6Ll2O6EcyTDxDrtjCZ8KLLEbK-YHM70QzsXGbJou0abH31UlhG2bV_NY98f4gHldDnXzPg_SlS8miduPO81EG5LEw-9Jrp9eZ_lGOAQigcGwm5e69M2Ur7qz6KvqjOnJchU-jaPEP1fsTRY8bMcNae0cT17Kiwg=="
+                target="brevo-sink">
+            <input class="form__field" type="text" name="NOM" placeholder="Prénom" autocomplete="given-name" required aria-label="Prénom">
+            <input class="form__field" type="email" name="EMAIL" placeholder="Votre adresse e-mail" autocomplete="email" required aria-label="Adresse e-mail">
+
+            <label class="form__consent">
+              <input type="checkbox" name="consent" required>
+              <span>J'accepte de recevoir les nouveautés et offres de Bleu Océan Aquitaine par e-mail.</span>
+            </label>
+
+            <!-- honeypot anti-spam (Brevo) — doit rester vide -->
+            <div class="form__hp" aria-hidden="true">
+              <input type="text" name="email_address_check" tabindex="-1" autocomplete="off" value="">
+            </div>
+            <input type="hidden" name="locale" value="fr">
+
+            <button class="btn" type="submit">Je m'inscris</button>
+
+            <p class="form__legal">En vous inscrivant, vous acceptez de recevoir les nouveautés et offres de Bleu Océan Aquitaine par e-mail. Désinscription possible à tout moment. Voir notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
+            <p id="form-error" class="form__error" role="alert" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <!-- État de succès -->
+        <div id="success" class="success is-hidden" role="status">
+          <div class="success__check" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M6 13.5L11 18.5L20 8" stroke="#134072" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <p class="success__title">Bienvenue à bord !</p>
+          <p class="success__text">Pensez à confirmer votre inscription via l'e-mail qu'on vient de vous envoyer.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MARCHÉS ===================== -->
+  <section class="section section--markets">
+    <div class="section__inner">
+      <p class="kicker" data-reveal>En attendant</p>
+      <h2 class="heading" data-reveal data-delay="1">D'ici là, retrouvez-nous<br>sur les marchés</h2>
+      <p class="lede" data-reveal data-delay="2">Venez voir nos pièces en vrai et échanger avec nous, le long de la côte landaise.</p>
+
+      <div class="tags">
+        <span class="tag" data-reveal>Seignosse</span>
+        <span class="tag" data-reveal>Dax</span>
+        <span class="tag" data-reveal>Vielle-Saint-Girons</span>
+        <span class="tag" data-reveal>Vieux-Boucau</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== L'ESPRIT BOA ===================== -->
+  <section class="section section--spirit">
+    <img class="section--spirit__compass" src="assets/logo-boa.png" alt="" aria-hidden="true">
+    <div class="section__inner">
+      <p class="kicker" data-reveal>L'esprit BOA</p>
+      <p class="heading" data-reveal data-delay="1">Plus qu'un vêtement,<br>un bout d'aventure.</p>
+      <p class="lede" data-reveal data-delay="2">L'appel du large et le goût des belles pièces marines, fabriquées en France. Bientôt, tout notre vestiaire à portée de clic.</p>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__brand">Bleu Océan Aquitaine</div>
+    <a class="footer__ig" href="https://instagram.com/bleuoceanaquitaine" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.5"></rect><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.5"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"></circle></svg>
+      @bleuoceanaquitaine
+    </a>
+    <nav class="footer__links" aria-label="Liens légaux">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Politique de confidentialité</a>
+    </nav>
+    <p class="footer__copy">© 2026 Bleu Océan Aquitaine — Nomad Explorers</p>
+  </footer>
+
+</main>
+
+<!-- Cible cachée du POST Brevo : reçoit la réponse sans quitter la page -->
+<iframe id="brevo-sink" name="brevo-sink" title="Brevo" aria-hidden="true" style="display:none;border:0;width:0;height:0;"></iframe>
+
+<script src="main.js" defer></script>
+</body>
+</html>
