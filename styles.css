@@ -233,6 +233,15 @@ img{display:block;}
 .footer__links a{text-decoration:none;color:rgba(237,243,236,.6);transition:color .3s ease;}
 .footer__links a:hover{color:var(--sky);}
 .footer__copy{margin:.4rem 0 0;font-size:.74rem;letter-spacing:.08em;color:rgba(237,243,236,.4);}
+.footer__rflx{
+  display:inline-flex;align-items:center;gap:.5rem;margin-top:-.4rem;
+  text-decoration:none;font-family:'Poppins',system-ui,sans-serif;
+  font-size:.72rem;font-weight:400;letter-spacing:.05em;
+  color:rgba(237,243,236,.5);transition:color .3s ease,opacity .3s ease;
+}
+.footer__rflx img{height:14px;width:auto;display:block;opacity:.85;transition:opacity .3s ease;}
+.footer__rflx:hover{color:rgba(237,243,236,.85);}
+.footer__rflx:hover img{opacity:1;}
 
 /* ============================================================
    Reveal au scroll
