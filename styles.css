@@ -109,7 +109,7 @@ img{display:block;}
 }
 .hero__title{
   margin:0;font-family:'Kica','Poppins',system-ui,sans-serif;font-weight:300;text-transform:uppercase;
-  font-size:clamp(2.1rem,5.8vw,4.6rem);line-height:1.14;letter-spacing:.03em;
+  font-size:clamp(2.4rem,6.6vw,5.4rem);line-height:1.12;letter-spacing:.03em;
   color:var(--paper);text-wrap:balance;
 }
 .hero__title span{display:inline-block;opacity:0;animation:boaHeroWord .85s var(--ease) both;}
@@ -151,7 +151,7 @@ img{display:block;}
 
 .kicker{margin:0 0 1.3rem;font-size:.8rem;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--blue);}
 .section--spirit .kicker{color:var(--sky);letter-spacing:.4em;margin-bottom:1.6rem;}
-.heading{margin:0;font-weight:300;text-transform:uppercase;line-height:1.2;letter-spacing:.03em;color:var(--navy-deep);}
+.heading{margin:0;font-family:'Kica','Poppins',system-ui,sans-serif;font-weight:300;text-transform:uppercase;line-height:1.18;letter-spacing:.02em;color:var(--navy-deep);}
 .section--paper .heading{font-size:clamp(1.7rem,4vw,2.7rem);}
 .section--markets .heading{font-size:clamp(1.6rem,3.6vw,2.5rem);}
 .section--spirit .heading{font-size:clamp(1.7rem,4.4vw,3rem);line-height:1.22;color:var(--paper);text-wrap:balance;}
