@@ -46,8 +46,11 @@ Le `.fr` n'est pas vendu par Vercel → l'acheter chez **OVH** ou **Gandi**.
 4. HTTPS : certificat émis automatiquement par Vercel.
 
 ## 3. Formulaire Brevo — déjà câblé
-- Formulaire sur-mesure aux couleurs BOA qui **POST** vers l'endpoint Brevo
-  (`7a48fc85.sibforms.com/serve/MUIF…`) via une iframe cachée → **pas de CORS**.
+- Formulaire sur-mesure aux couleurs BOA. Soumission en **JS (`fetch` + `FormData`,
+  multipart/form-data)** vers l'endpoint Brevo `7a48fc85.sibforms.com/v2/serve/MUIF…`,
+  qui répond en **JSON** `{ success, message }`. CORS autorisé pour le domaine.
+  (⚠️ un POST `<form>` natif envoie de l'urlencoded → rejeté en 400 par Brevo ;
+  c'est pourquoi l'envoi passe par `fetch`.)
 - Champs envoyés : `NOM` (prénom), `EMAIL`, `locale=fr`, honeypot `email_address_check`.
 - Le **double opt-in** et le RGPD restent gérés par Brevo.
 - Pas de CAPTCHA activé côté Brevo → rien à autoriser. Si un CAPTCHA est ajouté

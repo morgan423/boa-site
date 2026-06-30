@@ -66,14 +66,14 @@
 
       <div class="signup" data-reveal data-delay="3">
 
-        <!-- Formulaire sur-mesure aux couleurs BOA — POST natif vers Brevo.
-             La cible est l'iframe cachée #brevo-sink : pas de CORS, double opt-in
-             et RGPD restent gérés par Brevo. Champs réels : EMAIL, NOM. -->
+        <!-- Formulaire sur-mesure aux couleurs BOA. Soumission en JS via fetch +
+             FormData (multipart/form-data) vers l'endpoint Brevo, qui répond en JSON.
+             CORS autorisé pour le domaine. Double opt-in et RGPD gérés par Brevo.
+             Champs réels : EMAIL, NOM (+ honeypot email_address_check, locale). -->
         <div id="form-wrap">
           <form id="signup-form" class="form"
                 method="POST"
-                action="https://7a48fc85.sibforms.com/v2/serve/MUIFAPKRAjIFcCsxDQTWoR3c6gM0JvXIkdXQOeiHetBb15kY2RN6Ll2O6EcyTDxDrtjCZ8KLLEbK-YHM70QzsXGbJou0abH31UlhG2bV_NY98f4gHldDnXzPg_SlS8miduPO81EG5LEw-9Jrp9eZ_lGOAQigcGwm5e69M2Ur7qz6KvqjOnJchU-jaPEP1fsTRY8bMcNae0cT17Kiwg=="
-                target="brevo-sink">
+                action="https://7a48fc85.sibforms.com/v2/serve/MUIFAPKRAjIFcCsxDQTWoR3c6gM0JvXIkdXQOeiHetBb15kY2RN6Ll2O6EcyTDxDrtjCZ8KLLEbK-YHM70QzsXGbJou0abH31UlhG2bV_NY98f4gHldDnXzPg_SlS8miduPO81EG5LEw-9Jrp9eZ_lGOAQigcGwm5e69M2Ur7qz6KvqjOnJchU-jaPEP1fsTRY8bMcNae0cT17Kiwg==">
             <input class="form__field" type="text" name="NOM" placeholder="Prénom" autocomplete="given-name" required aria-label="Prénom">
             <input class="form__field" type="email" name="EMAIL" placeholder="Votre adresse e-mail" autocomplete="email" required aria-label="Adresse e-mail">
 
@@ -149,9 +149,6 @@
   </footer>
 
 </main>
-
-<!-- Cible cachée du POST Brevo : reçoit la réponse sans quitter la page -->
-<iframe id="brevo-sink" name="brevo-sink" title="Brevo" aria-hidden="true" style="display:none;border:0;width:0;height:0;"></iframe>
 
 <script src="main.js" defer></script>
 </body>
