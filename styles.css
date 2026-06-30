@@ -72,7 +72,7 @@ img{display:block;}
    HERO
    ============================================================ */
 .hero{
-  position:relative;min-height:100vh;min-height:100svh;
+  position:relative;min-height:100vh;min-height:100dvh;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;
   padding:7rem clamp(1.5rem,6vw,6rem) 5rem;
