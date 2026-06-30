@@ -29,6 +29,14 @@
   src:url("assets/fonts/poppins-600-latin-ext.woff2") format('woff2');
   unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 
+/* ---------- Kica Display (locale, woff2) — titres ---------- */
+@font-face{font-family:'Kica';font-style:normal;font-weight:300;font-display:swap;
+  src:url("assets/fonts/IFKica-Light.woff2") format('woff2');}
+@font-face{font-family:'Kica';font-style:normal;font-weight:400;font-display:swap;
+  src:url("assets/fonts/IFKica-Regular.woff2") format('woff2');}
+@font-face{font-family:'Kica';font-style:normal;font-weight:700;font-display:swap;
+  src:url("assets/fonts/IFKica-Bold.woff2") format('woff2');}
+
 /* ---------- Variables de marque ---------- */
 :root{
   --navy:#1C2B4F;
@@ -100,8 +108,8 @@ img{display:block;}
   opacity:0;animation:boaFadeUp .8s var(--ease) .36s both;
 }
 .hero__title{
-  margin:0;font-weight:300;text-transform:uppercase;
-  font-size:clamp(2rem,5.6vw,4.3rem);line-height:1.16;letter-spacing:.04em;
+  margin:0;font-family:'Kica','Poppins',system-ui,sans-serif;font-weight:300;text-transform:uppercase;
+  font-size:clamp(2.1rem,5.8vw,4.6rem);line-height:1.14;letter-spacing:.03em;
   color:var(--paper);text-wrap:balance;
 }
 .hero__title span{display:inline-block;opacity:0;animation:boaHeroWord .85s var(--ease) both;}
