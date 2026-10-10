@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Réglages locaux du harnais Claude Code (non versionnés)
+.claude/
+
+# Dépendances éventuelles
+node_modules/
+.vercel/
