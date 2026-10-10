@@ -233,15 +233,25 @@ img{display:block;}
 .footer__links a{text-decoration:none;color:rgba(237,243,236,.6);transition:color .3s ease;}
 .footer__links a:hover{color:var(--sky);}
 .footer__copy{margin:.4rem 0 0;font-size:.74rem;letter-spacing:.08em;color:rgba(237,243,236,.4);}
-.footer__rflx{
-  display:inline-flex;align-items:center;gap:.5rem;margin-top:-.4rem;
-  text-decoration:none;font-family:'Poppins',system-ui,sans-serif;
-  font-size:.72rem;font-weight:400;letter-spacing:.05em;
-  color:rgba(237,243,236,.5);transition:color .3s ease,opacity .3s ease;
-}
-.footer__rflx img{height:1.2rem;width:auto;display:block;opacity:.9;transition:opacity .3s ease;}
-.footer__rflx:hover{color:rgba(237,243,236,.85);}
-.footer__rflx:hover img{opacity:1;}
+/* Signature Studio Pulse : règles de signature-studio-pulse.html,
+   gélule reprise de SignatureStudioPulse.tsx, échelle réduite (texte
+   11 px, logo 18 px, gélule 30 px) comme sur la boutique. */
+.sp-sig{display:inline-flex;align-items:center;gap:6px;height:18px;
+  font:400 11px/14px 'Matter Mono',ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;
+  letter-spacing:.03em;color:inherit;white-space:nowrap;vertical-align:middle;}
+.sp-sig__lien{display:block;color:inherit;text-decoration:none;}
+.sp-sig__logo{display:block;height:18px;width:auto;}
+.sp-sig--clair{color:#121212;}
+.sp-sig--sombre{color:#EFEDE7;}
+.sp-sig--mono .sp-sig__symbole{fill:currentColor;}
+.sp-sig--gelule{position:relative;box-sizing:content-box;padding:6px 12px;border-radius:999px;background:var(--sp-fond,#121212);}
+.sp-sig--gelule:not(.sp-sig--mono){color:#EFEDE7;}
+.sp-sig--gelule .sp-sig__lien{outline:none;}
+.sp-sig--gelule .sp-sig__zone{position:absolute;inset:0;border-radius:999px;}
+.sp-sig--gelule:has(.sp-sig__lien:focus-visible){outline:2px solid currentColor;outline-offset:2px;}
+/* Nom du studio : lu par Google et les lecteurs d'écran, masqué à l'oeil. */
+.sp-sig__nom{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+@media (prefers-reduced-motion:reduce){.sp-sig .sp-sig__lien:hover,.sp-sig .sp-sig__lien:focus-visible{box-shadow:0 1px 0 currentColor;}}
 
 /* ============================================================
    Reveal au scroll

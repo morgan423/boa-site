@@ -105,3 +105,24 @@
     });
   }
 })();
+
+/* Signature Studio Pulse : au survol, le dégradé du symbole fait un tour
+   complet en 1,2 s (repris de signature-studio-pulse.html). */
+(function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.sp-sig:not(.sp-sig--mono):not(.sp-sig--statique) .sp-sig__lien').forEach(function (lien) {
+    var grad = lien.querySelector('.sp-sig__grad'), en = false;
+    if (!grad) return;
+    function tour() {
+      if (en) return; en = true;
+      var t0 = performance.now();
+      (function pas(t) {
+        var p = Math.min(1, (t - t0) / 1200), e = p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+        grad.setAttribute('gradientTransform', 'translate(' + (-1459 * e).toFixed(1) + ' ' + (1459 * e).toFixed(1) + ')');
+        if (p < 1) requestAnimationFrame(pas); else { grad.removeAttribute('gradientTransform'); en = false; }
+      })(t0);
+    }
+    lien.addEventListener('mouseenter', tour);
+    lien.addEventListener('focus', tour);
+  });
+})();
